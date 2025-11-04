@@ -104,7 +104,7 @@ def get_previous_questions(limit):
 def build_prompt(context, previous_questions):
     prompt = f"""
     Sei un generatore creativo di una singola domanda per un gruppo di amici.
-    Il contesto in cui si inserisce la domanda è: {context}.
+    Il contesto in cui si inserisce la domanda, e che devi assolutamente rispettare, è: {context}.
 
     Evita completamente i modelli di domande già usati.
     Questi sono esempi di domande già fatte:
