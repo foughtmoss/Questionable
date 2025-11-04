@@ -77,26 +77,11 @@ def generate_with_retry(model: str, prompt: str, max_retries: int = 5):
 
 def get_context():
     contexts = [
-        "assurdo", "piccante", "imbarazzante", "serio", "filosofico", "scherzoso",
-        "cringe", "romantico", "drammatico", "divertente", "provocatorio",
-        "nostalgico", "profondo", "random totale", "sfida", "surreale", "oscuro",
-        "leggero", "ironico", "trash", "intenso", "spirituale", "fantasioso",
-        "realistico", "positivo", "negativo", "strano", "inquietante", "enigmatico",
-        "cattivo", "buono", "innocente", "malizioso", "misterioso", "drastico",
-        "banale", "estremo", "controverso", "segreto", "vergognoso", "intimo",
-        "survivor", "sconvolgente", "paradossale", "psicologico", "confessionale",
-        "ridicolo", "epico", "quotidiano", "futuristico", "antico", "alcolico",
-        "pettegolezzo", "tabù", "sospetto", "coraggioso", "codardo", "bancone del bar",
-        "viaggio", "scuola", "famiglia", "lavoro", "amicizia", "tradimento",
-        "festa", "vacanza", "segreti mai detti", "passato oscuro", "futuro incerto",
-        "giorno speciale", "rivelazione", "primo amore", "ultima volta", "fantasma",
-        "straniero", "paranormale", "superpotere", "film horror", "cartone animato",
-        "musica", "serie tv", "cucina", "sport", "internet", "social media",
-        "crush", "meme", "vergogna scolastica", "prima esperienza", "incredibile ma vero",
-        "animali", "follia", "segreto mai confessato", "pazza idea", "desiderio nascosto",
-        "momento epico", "dilemma morale", "risata incontrollabile", "bugia bianca",
-        "piacere proibito", "paura più grande", "ossessione", "tabù sociale",
-        "imprevisto", "nostalgia pura", "avventura estrema", "scelta impossibile"
+        "piccante", "imbarazzante", "provocatorio", "cringe", "malizioso", "tabù",
+        "cattivo", "controverso", "vergognoso", "intimo", "sospetto", "codardo",
+        "tradimento", "crush", "vergogna scolastica", "prima esperienza",
+        "segreto mai confessato", "desiderio nascosto", "piacere proibito",
+        "paura più grande", "ossessione", "tabù sociale"
     ]
     return random.choice(contexts)
 
