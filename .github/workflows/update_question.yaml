@@ -2,7 +2,7 @@ name: Aggiorna domanda giornaliera
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # ogni giorno alle 10:00 UTC (11:00 in estate, 10:00 in inverno)
+    - cron: '0 9 * * *'
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: pip install google-genai supabase python-dotenv python-telegram-bot
+        run: pip install google-genai supabase python-dotenv python-telegram-bot requests
 
       - name: Esegui aggiornamento domanda e salvataggio su Supabase
         env:
@@ -29,12 +29,10 @@ jobs:
         run: python update_question.py
 
       - name: Avvia bot Telegram per creare sondaggio
+        if: success()
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python bot.py
-
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: python update_question.py
