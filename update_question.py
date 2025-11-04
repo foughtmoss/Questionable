@@ -115,9 +115,10 @@ def build_prompt(context, previous_questions):
     - Può iniziare in modi diversi (es. "Chi", "Quale persona", "Cosa succederebbe se", ecc.), NON usare sempre la stessa formula.
     - Evita domande prevedibili o simili a quelle generate in precedenza.
     - Puoi includere scenari ipotetici, accuse scherzose, situazioni assurde o puoi riferirti a scenari reali.
-    - La domanda deve essere originale, stimolante e capace di sorprendere.
+    - La domanda deve essere originale e capace di sorprendere.
     - Non includere testo extra: genera solo la domanda, niente introduzioni o conclusioni.
     - Non menzionare persone al di fuori del gruppo.
+    - Usa un linguaggio punk.
     - La domanda deve essere contenere al massimo 300 caratteri.
 
     Ora genera una sola domanda originale, rispettando queste indicazioni.
