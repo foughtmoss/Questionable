@@ -1,5 +1,5 @@
 # Questionable
-![Group Image](group_profile.png)
+![Group Image](logo.png)
 
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
 ![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?logo=google&logoColor=white)
