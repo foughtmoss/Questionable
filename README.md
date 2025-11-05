@@ -24,14 +24,6 @@ Every day, via **GitHub Actions**, the question generator runs automatically, st
 
 ---
 
-## Features
-
-- Daily automatic question generation via Gemini API  
-- Storage of questions in a Supabase database  
-- Telegram bot that publishes polls automatically  
-- Fully automated workflow using GitHub Actions  
-
----
 ## Pipeline
 ![Group Image](pipeline_bot.png)
 
