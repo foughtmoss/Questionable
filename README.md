@@ -1,10 +1,12 @@
 # Questionable
 ![Group Image](group_profile.png)
 
-![Python](https://img.shields.io/badge/Python-3.11-blue)
-![Supabase](https://img.shields.io/badge/Supabase-DB-success)
-![Telegram](https://img.shields.io/badge/Telegram-Bot-blueviolet)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Automation-orange)
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?logo=google&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-DB-3ECF8E?logo=supabase&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-Bot-26A5E4?logo=telegram&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Automation-2088FF?logo=githubactions&logoColor=white)
+
 
 ---
 ## Game Purpose
