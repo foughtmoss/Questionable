@@ -45,5 +45,5 @@ Every day, via **GitHub Actions**, the question generator runs automatically, st
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/tuo-username/questionable.git
+git clone https://github.com/foughtmoss/questionable.git
 cd questionable
