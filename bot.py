@@ -5,9 +5,7 @@ from dotenv import load_dotenv
 from supabase import create_client
 from telegram import Bot
 
-# ----------------------------
-# CONFIGURAZIONE BASE
-# ----------------------------
+
 logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     level=logging.INFO,
@@ -19,7 +17,7 @@ load_dotenv()
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
-CHAT_ID = os.getenv("CHAT_ID")  # metti qui la chat ID del gruppo
+CHAT_ID = os.getenv("CHAT_ID")
 
 if not TELEGRAM_BOT_TOKEN:
     raise Exception("Variabile TELEGRAM_BOT_TOKEN mancante nel file .env.")
@@ -28,9 +26,7 @@ if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
 if not CHAT_ID:
     raise Exception("CHAT_ID mancante nel file .env.")
 
-# ----------------------------
-# INIZIALIZZA SUPABASE
-# ----------------------------
+
 supabase = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
 
 
@@ -48,9 +44,7 @@ def get_latest_question():
     return None
 
 
-# ----------------------------
-# CREA SONDAGGIO AUTOMATICO
-# ----------------------------
+
 async def create_poll():
     bot = Bot(token=TELEGRAM_BOT_TOKEN)
     question = get_latest_question()
@@ -78,7 +72,7 @@ async def create_poll():
         question=question,
         options=options,
         is_anonymous=False,
-        allows_multiple_answers=False,
+        allows_multiple_answers=True,
     )
 
     logging.info(f"Sondaggio creato con domanda: {question} e opzioni: {options}")
