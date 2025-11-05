@@ -36,6 +36,7 @@ Every day, via **GitHub Actions**, the question generator runs automatically, st
 - Telegram Bot Token (from [BotFather](https://t.me/botfather))  
 - Supabase project with database access
 - Gemini API
+- Group Chat Id of your own Telegram group
 
 ---
 
