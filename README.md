@@ -7,12 +7,15 @@
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Automation-orange)
 
 ---
+## Game Purpose
+Questionable is a daily chaos generator for your Telegram group. Every day, a fresh question drops, and the poll options? The names of your own crew.
+
+It’s messy, fun, and a little bit ruthless — vote on who fits the question best and watch the drama unfold. Built for laughs, banter, and keeping your group on its toes.
+---
 
 ## Overview
 
-**Questionable** is a game developed to play with friends.
-
-It consists of two main components:
+**Questionable** consists of two main components:
 
 1. **Question Generator** – A Python script that generates a new daily question using the **Gemini API**.  
 2. **Telegram Bot** – A bot that retrieves the latest question from a **Supabase database** and publishes it as a poll in a Telegram group.
