@@ -27,7 +27,7 @@ Every day, via **GitHub Actions**, the question generator runs automatically, st
 ---
 
 ## Pipeline
-![Group Image](pipeline_bot.png)
+![Group Image](pipeline_bot2.png)
 
 ---
 
