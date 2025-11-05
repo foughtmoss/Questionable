@@ -1,5 +1,5 @@
 # Questionable
-![Group Image](proupimgprofile.png)
+![Group Image](groupimgprofile.png)
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![Supabase](https://img.shields.io/badge/Supabase-DB-success)
