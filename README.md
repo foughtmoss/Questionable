@@ -10,7 +10,9 @@
 
 ## Overview
 
-**Questionable** consists of two main components:
+**Questionable** is a game developed to play with friends.
+
+It consists of two main components:
 
 1. **Question Generator** – A Python script that generates a new daily question using the **Gemini API**.  
 2. **Telegram Bot** – A bot that retrieves the latest question from a **Supabase database** and publishes it as a poll in a Telegram group.
