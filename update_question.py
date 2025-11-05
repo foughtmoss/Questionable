@@ -8,18 +8,12 @@ from google import genai
 from google.genai.errors import ServerError, APIError
 from datetime import date
 
-# ----------------------------
-# CONFIGURAZIONE LOGGING
-# ----------------------------
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     datefmt="%H:%M:%S"
 )
 
-# ----------------------------
-# CARICA VARIABILI D'AMBIENTE
-# ----------------------------
 load_dotenv()
 
 API_KEY = os.getenv("GEMINI_API_KEY")
@@ -31,16 +25,10 @@ if not API_KEY:
 if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
     raise Exception("Variabili Supabase mancanti o non impostate.")
 
-# ----------------------------
-# INIZIALIZZA CLIENT
-# ----------------------------
 client = genai.Client(api_key=API_KEY)
 supabase = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
 
 
-# ----------------------------
-# FUNZIONE CON RETRY AUTOMATICO
-# ----------------------------
 def generate_with_retry(model: str, prompt: str, max_retries: int = 5):
     for attempt in range(1, max_retries + 1):
         try:
@@ -68,9 +56,6 @@ def generate_with_retry(model: str, prompt: str, max_retries: int = 5):
     raise Exception(f"Dopo {max_retries} tentativi, il modello non ha risposto.")
 
 
-# ----------------------------
-# CONTESTI
-# ----------------------------
 def get_context():
     contexts = [
         "piccante", "imbarazzante", "provocatorio", "cringe", "malizioso", "tabù",
@@ -83,9 +68,6 @@ def get_context():
     return random.choice(contexts)
 
 
-# ----------------------------
-# PRENDI DOMANDE PRECEDENTI FILTRATE PER CONTEXTO
-# ----------------------------
 def get_previous_questions(context, limit):
     response = supabase.table("questions") \
         .select("question") \
@@ -101,9 +83,6 @@ def get_previous_questions(context, limit):
     return []
 
 
-# ----------------------------
-# COSTRUISCI PROMPT PER GEMINI
-# ----------------------------
 def build_prompt(context, previous_questions):
     prompt = f"""
 Sei un generatore creativo di una singola domanda per un gruppo di amici.
@@ -129,9 +108,6 @@ Ora genera una sola domanda originale, rispettando queste indicazioni.
     return prompt
 
 
-# ----------------------------
-# SALVA DOMANDA SU SUPABASE CON CONTEXTO
-# ----------------------------
 def save_question(q: str, context: str):
     response = supabase.table("questions").insert({
         "question": q,
@@ -145,9 +121,6 @@ def save_question(q: str, context: str):
     print("Domanda salvata correttamente su Supabase.")
 
 
-# ----------------------------
-# ESECUZIONE PRINCIPALE
-# ----------------------------
 if __name__ == "__main__":
     context = get_context()
     print("\n--- CONTESTO ---")
