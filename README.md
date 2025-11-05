@@ -52,8 +52,13 @@ A single table named questions with 4 columns:
 ---
 
 ## Build your own bot
-
-you have to satisfy the requirements, then store the API keys in the API secrets section on your GitHub repository. You can also change the contexts list or prompt of the model as you like :).
+1. Create a repository on GitHub (you can clone this repository or add each component by hand).
+2. Create a Telegram group chat and make anyone in the group admin.
+3. Get a Google AI API key.
+4. Create a Supabase Project and create the questions table as specified.
+5. Create a Telegram Bot, add it to your group chat and make it admin.
+6. Store the required API keys (look at update_question.py and bot.py) in the GitHub Secrets key section.
+7. Now enjoy with your friends :).
 
 ---
 
