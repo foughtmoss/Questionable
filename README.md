@@ -49,6 +49,12 @@ A single table named questions with 4 columns:
 
 ---
 
+## Build your own bot
+
+you have to satisfy the requirements, then store the API keys in the API secrets section on your GitHub repository. You can also change the contexts list or prompt of the model as you like :).
+
+---
+
 ## Setup
 
 1. **Clone the repository**
