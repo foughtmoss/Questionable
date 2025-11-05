@@ -53,7 +53,7 @@ A single table named questions with 4 columns:
 
 ## Build your own bot
 1. Create a repository on GitHub (you can clone this repository or add each component by hand).
-2. You can edit the contexts list or the model prompt to change language or style of the question as you like.
+2. You can edit the contexts list or the model prompt to change language or style of the question as you like (currently the style is punk but you can make it family friendly).
 3. Create a Telegram group chat and make anyone in the group admin.
 4. Get a Google AI API key.
 5. Create a Supabase Project and create the questions table as specified.
