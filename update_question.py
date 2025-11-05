@@ -62,8 +62,7 @@ def get_context():
         "cattivo", "controverso", "vergognoso", "intimo", "sospetto", "codardo",
         "tradimento", "crush", "vergogna scolastica", "prima esperienza",
         "segreto mai confessato", "desiderio nascosto", "piacere proibito",
-        "paura più grande", "ossessione", "sesso", "crush nel gruppo", "sesso", "sesso",
-        "sesso", "sesso"
+        "paura più grande", "ossessione", "sesso", "crush nel gruppo", "sesso"
     ]
     return random.choice(contexts)
 
