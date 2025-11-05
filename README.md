@@ -20,7 +20,7 @@ It’s messy, fun, and a little bit ruthless. Vote on who fits the question best
 1. **Question Generator** : A Python script that generates a new daily question using the **Gemini API**.  
 2. **Telegram Bot** : A bot that retrieves the latest question from a **Supabase database** and publishes it as a poll in a Telegram group.
 
-Every day, via **GitHub Actions**, the question generator runs automatically, stores the question in Supabase, and triggers the Telegram bot to publish it.
+Every day, via **GitHub Actions**, the question generator runs automatically, stores the question in Supabase. Finally the Telegram bot is triggered, retrieves the question and publish it.
 
 ---
 
