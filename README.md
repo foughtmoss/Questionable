@@ -47,7 +47,6 @@ A single table named questions with 4 columns:
 - created_at
 - context
 
-
 ---
 
 ## Setup
