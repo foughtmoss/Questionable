@@ -32,8 +32,7 @@ Every day, via **GitHub Actions**, the question generator runs automatically, st
 ---
 
 ## Prerequisites
-
-- Python 3.10+  
+  
 - Telegram Bot Token (from [BotFather](https://t.me/botfather))  
 - Supabase project with database access
 - Gemini API
