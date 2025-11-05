@@ -9,8 +9,8 @@
 ---
 ## Game Purpose
 Questionable is a daily chaos generator for your Telegram group. Every day, a fresh question drops, and the poll options? The names of your own crew.
+It’s messy, fun, and a little bit ruthless. Vote on who fits the question best and watch the drama unfold. Built for laughs, banter, and keeping your group on its toes :).
 
-It’s messy, fun, and a little bit ruthless — vote on who fits the question best and watch the drama unfold. Built for laughs, banter, and keeping your group on its toes.
 ---
 
 ## Overview
