@@ -58,11 +58,16 @@ def generate_with_retry(model: str, prompt: str, max_retries: int = 5):
 
 def get_context():
     contexts = [
-        "piccante", "imbarazzante", "provocatorio", "cringe", "malizioso", "tabù",
-        "cattivo", "controverso", "vergognoso", "intimo", "sospetto", "codardo",
-        "tradimento", "crush", "vergogna scolastica", "prima esperienza",
-        "segreto mai confessato", "desiderio nascosto", "piacere proibito",
-        "paura più grande", "ossessione", "sesso", "crush nel gruppo"
+        "piccante", "infanzia", "imbarazzante", "amicizia", "provocatorio", 
+        "famiglia", "cringe", "scuola", "malizioso", "viaggio", "tabù", 
+        "vacanze", "cattivo", "sport", "controverso", "hobby", "vergognoso", 
+        "musica", "intimo", "film preferito", "sospetto", "cibo", "codardo", 
+        "libri", "tradimento", "animali", "crush", "tempo libero", 
+        "vergogna scolastica", "sogni", "prima esperienza", "serie tv", 
+        "segreto mai confessato", "videogiochi", "desiderio nascosto", 
+        "tecnologia", "piacere proibito", "moda", "paura più grande", 
+        "cucina", "ossessione", "lavoro", "sesso", "crush nel gruppo",
+        "weekend", "scuole superiori", "viaggio dei sogni", "routine mattutina"
     ]
     return random.choice(contexts)
 
