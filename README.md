@@ -51,6 +51,11 @@ A single table named questions with 4 columns:
 ---
 
 ## Build your own Questionable
+Questionable was born because our group chat wanted to have fun, but without spending a single penny.
+You can do the same! All the required services (GitHub, Supabase, Google AI API key, and Telegram Bot) offer free tiers that fully cover this use case, so you can build your own Questionable!
+
+These are the steps you have to follow:
+
 1. Create a repository on GitHub (you can clone this repository or add each component by hand).
 2. You can edit the contexts list or the model prompt in the `update_question.py` file to change language or style of the question as you like (currently the style is punk but you can make it family friendly).
 3. Create a Telegram group chat and make anyone in the group admin.
