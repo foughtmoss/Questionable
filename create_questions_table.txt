@@ -1,0 +1,7 @@
+CREATE TABLE public.questions (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  question text NOT NULL,
+  context text,
+  created_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT questions_pkey PRIMARY KEY (id)
+);
