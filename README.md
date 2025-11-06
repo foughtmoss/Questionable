@@ -52,7 +52,7 @@ A single table named questions with 4 columns:
 
 ## Build your own Questionable
 Questionable was born because our group chat wanted to have fun, but without spending a single penny.
-You can do the same! All the required services (GitHub, Supabase, Google AI API key, and Telegram Bot) offer free tiers that fully cover this use case, so you can build your own Questionable!
+You can do the same! All the required services (GitHub, Supabase, Gemini, and Telegram Bot) offer free tiers that fully cover this use case, so you can build your own Questionable!
 
 These are the steps you have to follow:
 
