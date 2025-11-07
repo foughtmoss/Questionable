@@ -72,9 +72,9 @@ def get_context():
         "libri", "tradimento", "animali", "crush", "tempo libero",
         "vergogna scolastica", "sogni", "prima esperienza", "serie tv",
         "segreto mai confessato", "videogiochi", "desiderio nascosto",
-        "tecnologia", "piacere proibito", "moda", "paura più grande",
+        "tecnologia", "piacere proibito", "paura più grande",
         "cucina", "ossessione", "lavoro", "sesso", "crush nel gruppo",
-        "weekend", "scuole superiori", "viaggio dei sogni", "routine mattutina"
+        "weekend", "scuole superiori", "viaggio dei sogni", "routine mattutina", "amore"
     ]
     return random.choice(contexts)
 
