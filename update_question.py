@@ -109,7 +109,7 @@ Questi sono esempi di domande già fatte:
 
 Requisiti per la domanda:
 - Deve richiedere come risposta un nome presente nel gruppo.
-- Può iniziare in modi diversi (es. "Chi", "Quale persona", "Cosa succederebbe se", ecc.), NON usare sempre la stessa formula.
+- Può iniziare in modi diversi (es. "Chi", "Quale persona", "Cosa succederebbe", ecc.), NON usare sempre la stessa formula.
 - Evita domande prevedibili o simili a quelle generate in precedenza.
 - Lo scenario che devi assolutamente rispettare è: {scenario}.
 - La domanda deve essere originale e capace di sorprendere.
