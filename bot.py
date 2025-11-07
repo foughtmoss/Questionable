@@ -22,12 +22,6 @@ CHAT_ID = os.getenv("CHAT_ID")
 CLOUDFLARE_ACCOUNT_ID = os.getenv("CLOUDFLARE_ACCOUNT_ID")
 CLOUDFLARE_API_TOKEN = os.getenv("CLOUDFLARE_API_TOKEN")
 API_BASE_URL = f"https://api.cloudflare.com/client/v4/accounts/{CLOUDFLARE_ACCOUNT_ID}/ai/run/"
-MODEL = "@cf/leonardo/lucid-origin"
-
-headers = {
-    "Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}",
-    "Content-Type": "application/json"
-}
 
 if not TELEGRAM_BOT_TOKEN:
     raise Exception("Variabile TELEGRAM_BOT_TOKEN mancante nel file .env.")
@@ -35,9 +29,17 @@ if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
     raise Exception("Variabili Supabase mancanti nel file .env.")
 if not CHAT_ID:
     raise Exception("CHAT_ID mancante nel file .env.")
+if not CLOUDFLARE_ACCOUNT_ID or not CLOUDFLARE_API_TOKEN:
+    raise Exception("CLOUDFLARE_ACCOUNT_ID o CLOUDFLARE_API_TOKEN mancanti nel file .env.")
 
 supabase = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
 
+MODEL = "@cf/leonardo/lucid-origin"
+
+headers = {
+    "Authorization": f"Bearer {CLOUDFLARE_API_TOKEN}",
+    "Content-Type": "application/json"
+}
 
 def generate_image(prompt: str):
     """
