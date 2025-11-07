@@ -2,6 +2,7 @@ import os
 import time
 import random
 import logging
+import json
 from dotenv import load_dotenv
 from supabase import create_client
 from google import genai
@@ -16,7 +17,7 @@ logging.basicConfig(
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = os.getenv("GEMINI_API_KEY2")
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_SERVICE_ROLE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 
@@ -57,7 +58,7 @@ def generate_with_retry(model: str, prompt: str, max_retries: int = 5):
 
 
 def get_scenario():
-    scenarios = ["reale", "ipotetico", "assurdo", "accuse scherzose"]
+    scenarios = ["reale"]
     scenario = random.choice(scenarios)
 
     return scenario
@@ -68,13 +69,14 @@ def get_context():
         "piccante", "infanzia", "imbarazzante", "amicizia", "provocatorio",
         "famiglia", "cringe", "scuola", "malizioso", "viaggio", "tabù",
         "vacanze", "cattivo", "sport", "controverso", "hobby", "vergognoso",
-        "musica", "intimo", "film preferito", "sospetto", "cibo", "codardo",
+        "musica", "intimo", "film", "sospetto", "cibo", "codardo",
         "libri", "tradimento", "animali", "crush", "tempo libero",
         "vergogna scolastica", "sogni", "prima esperienza", "serie tv",
         "segreto mai confessato", "videogiochi", "desiderio nascosto",
-        "tecnologia", "piacere proibito", "paura più grande",
+        "tecnologia", "piacere proibito", "moda", "paura più grande",
         "cucina", "ossessione", "lavoro", "sesso", "crush nel gruppo",
-        "weekend", "scuole superiori", "viaggio dei sogni", "routine mattutina", "amore"
+        "weekend", "scuole superiori", "viaggio dei sogni", "routine mattutina",
+        "amore"
     ]
     return random.choice(contexts)
 
@@ -110,33 +112,54 @@ Questi sono esempi di domande già fatte:
 Requisiti per la domanda:
 - Deve richiedere come risposta un nome presente nel gruppo.
 - Può iniziare in modi diversi (es. "Chi", "Quale persona", "Cosa succederebbe", ecc.), NON usare sempre la stessa formula.
+- Deve essere adatta ad un gruppo di 24enni, quindi non deve essere troppo bambinesca.
 - Evita domande prevedibili o simili a quelle generate in precedenza.
 - Lo scenario che devi assolutamente rispettare è: {scenario}.
-- La domanda deve essere originale e capace di sorprendere.
+- La domanda deve essere originale ma semplice.
 - Non includere testo extra: genera solo la domanda, niente introduzioni o conclusioni.
 - Non menzionare persone al di fuori del gruppo.
-- Usa un linguaggio punk e libertino.
-- Non usare clichè come "anarchia", "passione", "se dovessimo fondare...", "genio del male".
+- Usa un linguaggio semplice.
+- Non usare clichè come "alieni", "ambasciatore galattico".
 - Evita di includere fatti personali o oggetti specifici che non puoi conoscere del gruppo
  (come i loro possedimenti, abitudini o la loro storia personale).
 - La domanda deve contenere al massimo 300 caratteri.
 
-Ora genera una sola domanda originale, rispettando queste indicazioni.
+
+Dopo aver generato la domanda, crea anche una  descrizione sintetica (max 15 parole) che riassuma il contenuto visivo principale della domanda. Questa descrizione sarà usata per generare un'immagine.
+
+Requisiti per la descrizione:
+- La descrizione deve essere in inglese ed essere fedele alla domanda.
+- La descrizione deve essere un ottimo prompt per un modello text-to-image.
+
+Formatta l'output in JSON nel seguente modo, senza testo aggiuntivo:
+{{
+  "question": "testo della domanda qui",
+  "image_prompt": "breve descrizione visiva qui"
+}}
 """
     return prompt
 
 
-def save_question(q: str, context: str):
+def save_question(q: str, context: str, image_prompt: str):
     response = supabase.table("questions").insert({
         "question": q,
         "context": context,
-        "created_at": date.today().isoformat()
+        "created_at": date.today().isoformat(),
+        "image_prompt": image_prompt
     }).execute()
 
     if hasattr(response, "status_code") and response.status_code != 201:
         raise Exception(f"Errore inserimento domanda su Supabase: {response.data}")
 
     print("Domanda salvata correttamente su Supabase.")
+
+
+def clean_json_output(text: str) -> str:
+    text = text.strip()
+    if text.startswith("```"):
+        text = text.split("```")[1]
+        text = text.replace("json", "", 1).strip()
+    return text
 
 
 if __name__ == "__main__":
@@ -149,9 +172,26 @@ if __name__ == "__main__":
     print(previous_questions)
 
     prompt = build_prompt(context, previous_questions)
-    question = generate_with_retry("gemini-2.5-pro", prompt)
+    response = generate_with_retry("gemini-2.5-pro", prompt)
     print("\n--- RISPOSTA MODELLO ---")
+    print(response)
+
+    print("EXTRACTIN JSON")
+    cleaned = clean_json_output(response)
+
+    try:
+        data = json.loads(cleaned)
+        question = data.get("question", "").strip()
+        image_prompt = data.get("image_prompt", "").strip()
+    except json.JSONDecodeError:
+        logging.error("Impossibile decodificare l'output JSON del modello.")
+        question = response.strip()
+        image_prompt = ""
+
+    print("\n--- DOMANDA ---")
     print(question)
+    print("\n--- PROMPT PER IMMAGINE ---")
+    print(image_prompt)
 
     print("\n--- SALVATAGGIO DOMANDA NEL DB ---")
-    save_question(question, context)
+    save_question(question, context, image_prompt)
