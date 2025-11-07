@@ -56,16 +56,23 @@ def generate_with_retry(model: str, prompt: str, max_retries: int = 5):
     raise Exception(f"Dopo {max_retries} tentativi, il modello non ha risposto.")
 
 
+def get_scenario():
+    scenarios = ["reale", "ipotetico", "assurdo", "accuse scherzose"]
+    scenario = random.choice(scenarios)
+
+    return scenario
+
+
 def get_context():
     contexts = [
-        "piccante", "infanzia", "imbarazzante", "amicizia", "provocatorio", 
-        "famiglia", "cringe", "scuola", "malizioso", "viaggio", "tabù", 
-        "vacanze", "cattivo", "sport", "controverso", "hobby", "vergognoso", 
-        "musica", "intimo", "film preferito", "sospetto", "cibo", "codardo", 
-        "libri", "tradimento", "animali", "crush", "tempo libero", 
-        "vergogna scolastica", "sogni", "prima esperienza", "serie tv", 
-        "segreto mai confessato", "videogiochi", "desiderio nascosto", 
-        "tecnologia", "piacere proibito", "moda", "paura più grande", 
+        "piccante", "infanzia", "imbarazzante", "amicizia", "provocatorio",
+        "famiglia", "cringe", "scuola", "malizioso", "viaggio", "tabù",
+        "vacanze", "cattivo", "sport", "controverso", "hobby", "vergognoso",
+        "musica", "intimo", "film preferito", "sospetto", "cibo", "codardo",
+        "libri", "tradimento", "animali", "crush", "tempo libero",
+        "vergogna scolastica", "sogni", "prima esperienza", "serie tv",
+        "segreto mai confessato", "videogiochi", "desiderio nascosto",
+        "tecnologia", "piacere proibito", "moda", "paura più grande",
         "cucina", "ossessione", "lavoro", "sesso", "crush nel gruppo",
         "weekend", "scuole superiori", "viaggio dei sogni", "routine mattutina"
     ]
@@ -88,6 +95,10 @@ def get_previous_questions(context, limit):
 
 
 def build_prompt(context, previous_questions):
+    scenario = get_scenario()
+    print("-----SCENARIO-----")
+    print(scenario)
+
     prompt = f"""
 Sei un generatore creativo di una singola domanda per un gruppo di amici.
 Il contesto in cui si inserisce la domanda, e che devi assolutamente rispettare, è: {context}.
@@ -100,11 +111,14 @@ Requisiti per la domanda:
 - Deve richiedere come risposta un nome presente nel gruppo.
 - Può iniziare in modi diversi (es. "Chi", "Quale persona", "Cosa succederebbe se", ecc.), NON usare sempre la stessa formula.
 - Evita domande prevedibili o simili a quelle generate in precedenza.
-- Puoi includere scenari ipotetici, accuse scherzose, situazioni assurde o puoi riferirti a scenari reali.
+- Lo scenario che devi assolutamente rispettare è: {scenario}.
 - La domanda deve essere originale e capace di sorprendere.
 - Non includere testo extra: genera solo la domanda, niente introduzioni o conclusioni.
 - Non menzionare persone al di fuori del gruppo.
 - Usa un linguaggio punk e libertino.
+- Non usare clichè come "anarchia", "passione", "Se dovessimo fondare...".
+- Evita di includere fatti personali o oggetti specifici che non puoi conoscere del gruppo
+ (come i loro possedimenti, abitudini o la loro storia personale).
 - La domanda deve contenere al massimo 300 caratteri.
 
 Ora genera una sola domanda originale, rispettando queste indicazioni.
