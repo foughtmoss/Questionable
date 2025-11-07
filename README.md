@@ -4,9 +4,10 @@
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
 ![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?logo=google&logoColor=white)
 ![Supabase](https://img.shields.io/badge/Supabase-DB-3ECF8E?logo=supabase&logoColor=white)
+![Cloudflare Workers AI](https://img.shields.io/badge/Cloudflare_Workers_AI-FF7139?logo=cloudflare&logoColor=white)
 ![Telegram](https://img.shields.io/badge/Telegram-Bot-26A5E4?logo=telegram&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Automation-2088FF?logo=githubactions&logoColor=white)
-![Cloudflare Workers AI](https://img.shields.io/badge/Cloudflare_Workers_AI-FF7139?logo=cloudflare&logoColor=white)
+
 
 
 
