@@ -66,7 +66,8 @@ These are the steps you have to follow:
 5. Get a Cloudflare Workers AI API token.
 6. Create a Supabase Project and build the questions table as specified, you can use the `create_questions_table.txt` file content and run it in the Supabase SQL editor.
 7. Create a Telegram Bot, add it to your group chat and make it admin.
-8. Store the required API keys and token (look at update_question.py and bot.py) in the GitHub Secrets key section. (`Settings->Security->Secrets and variables->Actions->New repository secret`)
+8. Store the required API keys and token (look at update_question.py and bot.py) in the GitHub Secrets key section.
+   (`Settings->Security->Secrets and variables->Actions->New repository secret`)
 9. Now enjoy the chaos with your friends :).
 
 ---
