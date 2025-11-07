@@ -17,12 +17,15 @@ It’s messy, fun, and a little bit ruthless. Vote on who fits the question best
 
 ## Overview
 
-**Questionable** consists of two main components:
+**Questionable** is composed of two main modules:
 
-1. **Question Generator** : A Python script that generates a new daily question using the **Gemini API**.  
-2. **Telegram Bot** : A bot that retrieves the latest question from a **Supabase database** and publishes it as a poll in a Telegram group.
+1. **Question Generator** — a Python script that uses the **Gemini API** to create a new question every day.  
+2. **Telegram Bot** — a bot that retrieves the latest question from a **Supabase** database, generates a related image using **Cloudflare Workers AI** (`@cf/leonardo/lucid-origin`), and posts it as a poll in a Telegram group.
 
-Every day, via **GitHub Actions**, the question generator runs automatically, stores the question in Supabase. Finally the Telegram bot is triggered, retrieves the question and publish it.
+The entire workflow is automated through **GitHub Actions**:
+- The Question Generator runs daily and stores the generated question in Supabase.  
+- The Telegram Bot is then triggered to retrieve the question, create a visual image from it, and publish the poll automatically.
+
 
 ---
 
