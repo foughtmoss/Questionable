@@ -6,6 +6,8 @@
 ![Supabase](https://img.shields.io/badge/Supabase-DB-3ECF8E?logo=supabase&logoColor=white)
 ![Telegram](https://img.shields.io/badge/Telegram-Bot-26A5E4?logo=telegram&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-Automation-2088FF?logo=githubactions&logoColor=white)
+![Cloudflare Workers AI](https://img.shields.io/badge/Cloudflare_Workers_AI-FF7139?logo=cloudflare&logoColor=white)
+
 
 
 ---
