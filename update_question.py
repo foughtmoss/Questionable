@@ -116,7 +116,7 @@ Requisiti per la domanda:
 - Non includere testo extra: genera solo la domanda, niente introduzioni o conclusioni.
 - Non menzionare persone al di fuori del gruppo.
 - Usa un linguaggio punk e libertino.
-- Non usare clichè come "anarchia", "passione", "Se dovessimo fondare...".
+- Non usare clichè come "anarchia", "passione", "se dovessimo fondare...", "genio del male".
 - Evita di includere fatti personali o oggetti specifici che non puoi conoscere del gruppo
  (come i loro possedimenti, abitudini o la loro storia personale).
 - La domanda deve contenere al massimo 300 caratteri.
