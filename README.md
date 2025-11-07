@@ -55,7 +55,7 @@ A single table named questions with 4 columns:
 
 ## Build your own Questionable
 Questionable was born because our group chat wanted to have fun, but without spending a single penny.
-You can do the same! All the required services (GitHub, Supabase, Gemini, and Telegram Bot) offer free tiers that fully cover this use case, so you can build your own Questionable!
+You can do the same! All the required services (GitHub, Supabase, Gemini, Cloudflare Workers AI and Telegram Bot) offer free tiers that fully cover this use case, so you can build your own Questionable!
 
 These are the steps you have to follow:
 
@@ -63,10 +63,11 @@ These are the steps you have to follow:
 2. You can edit the contexts list or the model prompt in the `update_question.py` file to change language or style of the question as you like (currently the style is "simple" but you can make it "punk" or even more "family friendly").
 3. Create a Telegram group chat and make anyone in the group admin.
 4. Get a Google AI API key.
-5. Create a Supabase Project and build the questions table as specified, you can use the `create_questions_table.txt` file content and run it in the Supabase SQL editor.
-6. Create a Telegram Bot, add it to your group chat and make it admin.
-7. Store the required API keys and token (look at update_question.py and bot.py) in the GitHub Secrets key section. (`Settings->Security->Secrets and variables->Actions->New repository secret`)
-8. Now enjoy the chaos with your friends :).
+5. Get a Cloudflare Workers AI API token.
+6. Create a Supabase Project and build the questions table as specified, you can use the `create_questions_table.txt` file content and run it in the Supabase SQL editor.
+7. Create a Telegram Bot, add it to your group chat and make it admin.
+8. Store the required API keys and token (look at update_question.py and bot.py) in the GitHub Secrets key section. (`Settings->Security->Secrets and variables->Actions->New repository secret`)
+9. Now enjoy the chaos with your friends :).
 
 ---
 
