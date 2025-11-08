@@ -3,5 +3,6 @@ CREATE TABLE public.questions (
   question text NOT NULL,
   context text,
   created_at timestamp with time zone DEFAULT now(),
+  image_prompt text,
   CONSTRAINT questions_pkey PRIMARY KEY (id)
 );
