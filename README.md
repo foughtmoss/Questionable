@@ -37,17 +37,6 @@ The entire workflow is automated through **GitHub Actions**:
 
 ---
 
-## Supabase DB
-
-A single table named questions with 5 columns:
-- id
-- question
-- created_at
-- context
-- image_prompt
-
----
-
 ## Build your own Questionable
 Questionable was born because our group chat wanted to have fun, but without spending a single penny.
 You can do the same! All the required services (GitHub, Supabase, Gemini, Cloudflare Workers AI and Telegram Bot) offer free tiers that fully cover this use case, so you can build your own Questionable!
