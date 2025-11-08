@@ -128,9 +128,10 @@ Requisiti per la domanda:
 Dopo aver generato la domanda, crea anche una  descrizione sintetica (max 15 parole) che riassuma il contenuto visivo principale della domanda. Questa descrizione sarà usata per generare un'immagine.
 
 Requisiti per la descrizione:
-- La descrizione deve essere in inglese ed essere fedele alla domanda.
+- La descrizione deve essere in inglese.
 - La descrizione deve essere un ottimo prompt per un modello text-to-image.
-- Lo stile dell'immagine da generare deve essere "cinematic".
+- La descrizione deve sottolineare che lo stile dell'immagine da generare deve essere "cinematic".
+- La descrizione deve essere coerente con la domanda.
 
 Formatta l'output in JSON nel seguente modo, senza testo aggiuntivo:
 {{
