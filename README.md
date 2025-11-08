@@ -48,7 +48,7 @@ The entire workflow is automated through **GitHub Actions**:
 
 ## Supabase DB
 
-A single table named questions with 4 columns:
+A single table named questions with 5 columns:
 - id
 - question
 - created_at
