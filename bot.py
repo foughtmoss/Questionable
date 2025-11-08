@@ -59,11 +59,9 @@ def generate_image(prompt: str):
 
         logging.info(f"Cloudflare AI status: {response.status_code}")
 
-        # Caso 1: risposta binaria (immagine diretta)
         if response.headers.get("Content-Type", "").startswith("image/"):
             return response.content
 
-        # Caso 2: risposta JSON con base64
         try:
             data = response.json()
         except Exception as e:
