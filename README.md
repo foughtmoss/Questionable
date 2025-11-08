@@ -53,6 +53,7 @@ A single table named questions with 4 columns:
 - question
 - created_at
 - context
+- image_prompt
 
 ---
 
