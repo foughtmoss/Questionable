@@ -67,7 +67,7 @@ def get_scenario():
 def get_context():
     contexts = [
         "piccante", "infanzia", "imbarazzante", "amicizia", "provocatorio",
-        "famiglia", "cringe", "scuola", "malizioso", "viaggio", "tabù",
+        "famiglia", "cringe", "università", "malizioso", "viaggio", "tabù",
         "vacanze", "cattivo", "sport", "controverso", "hobby", "vergognoso",
         "musica", "intimo", "film", "sospetto", "cibo", "codardo",
         "libri", "tradimento", "animali", "crush", "tempo libero",
