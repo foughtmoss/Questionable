@@ -112,7 +112,7 @@ Questi sono esempi di domande già fatte:
 Requisiti per la domanda:
 - Deve richiedere come risposta un nome presente nel gruppo.
 - Può iniziare in modi diversi (es. "Chi", "Quale persona", "Cosa succederebbe", ecc.), NON usare sempre la stessa formula.
-- Deve essere adatta ad un gruppo di 24enni, quindi non deve essere troppo bambinesca.
+- Deve essere adatta ad un gruppo di 24enni, quindi deve rifarsi ad esperienze giovanili.
 - Evita domande prevedibili o simili a quelle generate in precedenza.
 - Lo scenario che devi assolutamente rispettare è: {scenario}.
 - La domanda deve essere originale ma semplice.
@@ -125,13 +125,14 @@ Requisiti per la domanda:
 - La domanda deve contenere al massimo 300 caratteri.
 
 
-Dopo aver generato la domanda, crea anche una  descrizione sintetica (max 15 parole) che riassuma il contenuto visivo principale della domanda. Questa descrizione sarà usata per generare un'immagine.
+Dopo aver generato la domanda, crea anche una  descrizione sintetica (max 20 parole) che riassuma il contenuto visivo principale della domanda. Questa descrizione sarà usata per generare un'immagine.
 
 Requisiti per la descrizione:
 - La descrizione deve essere in inglese.
 - La descrizione deve essere un ottimo prompt per un modello text-to-image.
 - La descrizione deve sottolineare che lo stile dell'immagine da generare deve essere "cinematic".
 - La descrizione deve essere coerente con la domanda.
+- La descrizione deve sottolineare che i soggetti hanno un'età compresa tra i 20 e i 24 anni.
 
 Formatta l'output in JSON nel seguente modo, senza testo aggiuntivo:
 {{
