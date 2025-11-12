@@ -133,6 +133,7 @@ Requisiti per la descrizione:
 - La descrizione deve sottolineare che lo stile dell'immagine da generare deve essere "cinematic".
 - La descrizione deve essere coerente con la domanda.
 - La descrizione deve sottolineare che i soggetti hanno un'età compresa tra i 20 e i 24 anni.
+- La descrizione deve comunicare anche i colori della scena.
 
 Formatta l'output in JSON nel seguente modo, senza testo aggiuntivo:
 {{
