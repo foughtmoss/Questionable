@@ -120,7 +120,7 @@ async def create_poll():
     image_prompt = get_latest_image_prompt()
 
     if not image_prompt:
-        logging.error("Nessuna domanda trovata nel database.")
+        logging.error("Nessuna immagine trovata nel database.")
         return
 
     image_data = generate_image(image_prompt)
@@ -143,6 +143,10 @@ async def create_poll():
     if len(options) < 2:
         options.append("Nessun altro disponibile")
 
+    # Aggiungi Miro, Elena, Gian solo se ci sono meno di 11 opzioni
+    if len(options) < 11:
+        options.extend(["Miro", "Elena", "Gian"])
+
     await bot.send_photo(
         chat_id=CHAT_ID,
         photo=image_data,
@@ -159,7 +163,6 @@ async def create_poll():
     )
 
     logging.info(f"Sondaggio creato con opzioni: {options}")
-
 
 def main():
     logging.info("Bot Telegram avviato. Creazione automatica sondaggio...")
