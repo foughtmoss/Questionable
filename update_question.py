@@ -105,9 +105,9 @@ def build_prompt(context, previous_questions):
 Sei un generatore creativo di una singola domanda per un gruppo di amici.
 Il contesto in cui si inserisce la domanda, e che devi assolutamente rispettare, è: {context}.
 
-Evita completamente i modelli di domande già usati.
-Questi sono esempi di domande già fatte:
+Questi sono esempi di domande già fatte per il contesto {context}:
 {previous_questions}
+
 
 Requisiti per la domanda:
 - Deve richiedere come risposta un nome presente nel gruppo.
@@ -123,6 +123,7 @@ Requisiti per la domanda:
 - Evita di includere fatti personali o oggetti specifici che non puoi conoscere del gruppo
  (come i loro possedimenti, abitudini o la loro storia personale).
 - La domanda deve contenere al massimo 300 caratteri.
+- Lo scenario della domanda, le tematiche ecc devono essere diversi dalle domande fatte in precedenza.
 
 
 Dopo aver generato la domanda, crea anche una  descrizione sintetica (max 20 parole) che riassuma il contenuto visivo principale della domanda. Questa descrizione sarà usata per generare un'immagine.
