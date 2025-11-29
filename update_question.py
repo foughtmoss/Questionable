@@ -72,11 +72,15 @@ def get_context():
         "musica", "intimo", "film", "sospetto", "cibo", "codardo",
         "libri", "tradimento", "animali", "crush", "tempo libero",
         "vergogna scolastica", "sogni", "prima esperienza", "serie tv",
-        "segreto mai confessato", "videogiochi", "desiderio nascosto",
-        "tecnologia", "piacere proibito", "moda", "paura più grande",
-        "cucina", "ossessione", "lavoro", "sesso", "crush nel gruppo",
+        "segreto mai confessato", "videogiochi",
+        "tecnologia", "piacere proibito", "paura più grande",
+        "cucina", "ossessione", "lavoro", "sesso",
         "weekend", "scuole superiori", "viaggio dei sogni", "routine mattutina",
-        "amore"
+        "amore", "avventura notturna", "ricordo perduto", "incontri casuali",
+        "magia quotidiana", "passione segreta", "emozione pura", "sfida impossibile",
+        "gita improvvisata", "momento epico", "scoperta sorprendente",
+        "dialogo proibito", "ritorno al passato", "notte insonne", "brivido improvviso",
+        "poesia nascosta", "invidia segreta", "sorriso complice", "sorpresa inattesa"
     ]
     return random.choice(contexts)
 
