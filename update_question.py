@@ -182,7 +182,7 @@ if __name__ == "__main__":
     print(previous_questions)
 
     prompt = build_prompt(context, previous_questions)
-    response = generate_with_retry("gemini-2.5-pro", prompt)
+    response = generate_with_retry("gemini-2.5-flash", prompt)
     print("\n--- RISPOSTA MODELLO ---")
     print(response)
 
